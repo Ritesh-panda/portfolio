@@ -22,19 +22,19 @@ export default function FluidCursorBackground() {
         IMMEDIATE: true,
         TRIGGER: 'hover',
         AUTO: false,
-        SIM_RESOLUTION: 256, // Ultra-crisp liquid resolution
-        DYE_RESOLUTION: 1024, // Bold, high-definition dye saturation
+        SIM_RESOLUTION: 256, // High resolution for crisp liquid edges
+        DYE_RESOLUTION: 1024, // HD silky color quality
         CAPTURE_RESOLUTION: 512,
-        DENSITY_DISSIPATION: 0.025, // Ultra-high color & fluid density — paint retains rich body and marble ribbons
-        VELOCITY_DISSIPATION: 0.988, // Silky fluid inertia for viscous liquid marble movement
-        PRESSURE: 0.88,
-        PRESSURE_ITERATIONS: 32, // High precision pressure solver for crisp boundary curves
-        CURL: 85, // Extremely high curve factor: dramatic curving swirls, liquid whirlpools, and fluid ribbon arcs
-        SPLAT_RADIUS: 0.65, // Dense, thick, rich fluid paint stroke volume
-        SPLAT_FORCE: 7500, // Dynamic responsive fluid velocity
-        SHADING: true, // Deep 3D liquid highlights & specular sheen
-        COLORFUL: true, // Vibrant chromatic transitions
-        COLOR_UPDATE_SPEED: 14,
+        DENSITY_DISSIPATION: 0.22, // ~10-second long-lasting dye longevity (thick liquid retention)
+        VELOCITY_DISSIPATION: 0.985, // Smooth liquid wave momentum: rolls and swirls like water for seconds
+        PRESSURE: 0.8,
+        PRESSURE_ITERATIONS: 25,
+        CURL: 28, // Distinct curling liquid wave vortices (produces the marbled crescent wave)
+        SPLAT_RADIUS: 0.3, // Silky liquid stroke thickness
+        SPLAT_FORCE: 5500, // Natural fluid wave momentum on swipe
+        SHADING: true, // 3D specular sheen, depth & highlights
+        COLORFUL: true, // Vibrant holographic pastel color cycle
+        COLOR_UPDATE_SPEED: 10,
         PAUSED: false,
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: true,
