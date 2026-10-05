@@ -16,18 +16,6 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Curated solid 3D liquid palette calibrated to prevent additive white burnout
-    // Deep Royal Violet, Rich Indigo, Velvet Plum Rose, Slate Sapphire, Rich Amethyst
-    const SOLID_3D_PALETTE = [
-      { r: 0.05, g: 0.02, b: 0.12 }, // Deep Royal Violet (pure pigment, zero white burnout)
-      { r: 0.03, g: 0.04, b: 0.13 }, // Rich Indigo
-      { r: 0.09, g: 0.02, b: 0.07 }, // Velvet Plum Rose
-      { r: 0.02, g: 0.06, b: 0.11 }, // Slate Sapphire
-      { r: 0.07, g: 0.03, b: 0.10 }, // Rich Amethyst
-    ]
-
-    let paletteIndex = 0
-
     const fluidOptions: any = {
       IMMEDIATE: false, // Prevents sudden auto-blasts on mount
       TRIGGER: 'hover',
@@ -43,8 +31,8 @@ export default function FluidCursorBackground() {
       SPLAT_RADIUS: 0.22, // Refined silky ribbons
       SPLAT_FORCE: 3500, // Natural responsive fluid wave momentum
       SHADING: false, // Disables specular highlight reflections that cause white core burnout
-      COLORFUL: false, // Disables random bright neon HSL cycling
-      SPLAT_COLOR: SOLID_3D_PALETTE[0], // Solid calibrated pigment
+      COLORFUL: true, // Full rich rainbow spectrum (violet, cyan, emerald, sky blue, rose, coral, amber)
+      COLOR_UPDATE_SPEED: 10, // Smooth continuous rainbow color transitions
       PAUSED: false,
       BACK_COLOR: { r: 0, g: 0, b: 0 },
       TRANSPARENT: true,
@@ -52,27 +40,19 @@ export default function FluidCursorBackground() {
       SUNRAYS: false,
     }
 
-    // Initialize WebGL Navier-Stokes Solid 3D Liquid Simulation
+    // Initialize WebGL Navier-Stokes Rainbow Liquid Simulation
     try {
       WebGLFluid(canvas, fluidOptions)
     } catch (err) {
       console.warn('WebGL Fluid initialization fallback:', err)
     }
 
-    let moveCounter = 0
-
-    // Safely forward global window mouse events into WebGL canvas with smooth gliding and solid 3D color shifts
+    // Safely forward global window mouse events into WebGL canvas with smooth gliding
     const handleGlobalMouseMove = (e: MouseEvent) => {
       if (!e.isTrusted || !canvas) return
       const rect = canvas.getBoundingClientRect()
       const offsetX = e.clientX - rect.left
       const offsetY = e.clientY - rect.top
-
-      moveCounter++
-      if (moveCounter % 35 === 0) {
-        paletteIndex = (paletteIndex + 1) % SOLID_3D_PALETTE.length
-        fluidOptions.SPLAT_COLOR = SOLID_3D_PALETTE[paletteIndex]
-      }
 
       const moveEvent = new MouseEvent('mousemove', {
         clientX: e.clientX,
@@ -91,12 +71,6 @@ export default function FluidCursorBackground() {
       const rect = canvas.getBoundingClientRect()
       const offsetX = touch.clientX - rect.left
       const offsetY = touch.clientY - rect.top
-
-      moveCounter++
-      if (moveCounter % 35 === 0) {
-        paletteIndex = (paletteIndex + 1) % SOLID_3D_PALETTE.length
-        fluidOptions.SPLAT_COLOR = SOLID_3D_PALETTE[paletteIndex]
-      }
 
       const moveEvent = new MouseEvent('mousemove', {
         clientX: touch.clientX,
