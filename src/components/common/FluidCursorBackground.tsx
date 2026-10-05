@@ -19,7 +19,7 @@ export default function FluidCursorBackground() {
     // Initialize WebGL Navier-Stokes Jellyfish Fluid Simulation with gentle silky pastel waves
     try {
       WebGLFluid(canvas, {
-        IMMEDIATE: true,
+        IMMEDIATE: false, // Prevents sudden auto-blasts on mount
         TRIGGER: 'hover',
         AUTO: false,
         SIM_RESOLUTION: 256, // High resolution for crisp liquid edges
@@ -30,8 +30,8 @@ export default function FluidCursorBackground() {
         PRESSURE: 0.8,
         PRESSURE_ITERATIONS: 25,
         CURL: 20, // Gentle, undulating organic ripples
-        SPLAT_RADIUS: 0.25, // Refined silky ribbons
-        SPLAT_FORCE: 4000, // Natural fluid wave momentum
+        SPLAT_RADIUS: 0.22, // Refined silky ribbons
+        SPLAT_FORCE: 3500, // Natural fluid wave momentum without harsh blasts
         SHADING: false, // Soft flat liquid shading (no harsh blinding white specular flashes)
         COLORFUL: true, // Smooth pastel violet/rose/lilac color gradient cycle
         COLOR_UPDATE_SPEED: 6,
@@ -45,26 +45,12 @@ export default function FluidCursorBackground() {
       console.warn('WebGL Fluid initialization fallback:', err)
     }
 
-    let isPointerInitialized = false
-
-    // Safely forward global window mouse events into WebGL canvas with recursion protection
+    // Safely forward global window mouse events into WebGL canvas with smooth gliding
     const handleGlobalMouseMove = (e: MouseEvent) => {
       if (!e.isTrusted || !canvas) return
       const rect = canvas.getBoundingClientRect()
       const offsetX = e.clientX - rect.left
       const offsetY = e.clientY - rect.top
-
-      if (!isPointerInitialized) {
-        const downEvent = new MouseEvent('mousedown', {
-          clientX: e.clientX,
-          clientY: e.clientY,
-          bubbles: false,
-        })
-        Object.defineProperty(downEvent, 'offsetX', { get: () => offsetX })
-        Object.defineProperty(downEvent, 'offsetY', { get: () => offsetY })
-        canvas.dispatchEvent(downEvent)
-        isPointerInitialized = true
-      }
 
       const moveEvent = new MouseEvent('mousemove', {
         clientX: e.clientX,
@@ -74,23 +60,6 @@ export default function FluidCursorBackground() {
       Object.defineProperty(moveEvent, 'offsetX', { get: () => offsetX })
       Object.defineProperty(moveEvent, 'offsetY', { get: () => offsetY })
       canvas.dispatchEvent(moveEvent)
-    }
-
-    const handleGlobalMouseDown = (e: MouseEvent) => {
-      if (!e.isTrusted || !canvas) return
-      const rect = canvas.getBoundingClientRect()
-      const offsetX = e.clientX - rect.left
-      const offsetY = e.clientY - rect.top
-
-      const downEvent = new MouseEvent('mousedown', {
-        clientX: e.clientX,
-        clientY: e.clientY,
-        bubbles: false,
-      })
-      Object.defineProperty(downEvent, 'offsetX', { get: () => offsetX })
-      Object.defineProperty(downEvent, 'offsetY', { get: () => offsetY })
-      canvas.dispatchEvent(downEvent)
-      isPointerInitialized = true
     }
 
     // Touch event forwarder
@@ -111,28 +80,8 @@ export default function FluidCursorBackground() {
       canvas.dispatchEvent(moveEvent)
     }
 
-    const handleGlobalTouchStart = (e: TouchEvent) => {
-      if (!e.isTrusted || !canvas || e.touches.length === 0) return
-      const touch = e.touches[0]
-      const rect = canvas.getBoundingClientRect()
-      const offsetX = touch.clientX - rect.left
-      const offsetY = touch.clientY - rect.top
-
-      const downEvent = new MouseEvent('mousedown', {
-        clientX: touch.clientX,
-        clientY: touch.clientY,
-        bubbles: false,
-      })
-      Object.defineProperty(downEvent, 'offsetX', { get: () => offsetX })
-      Object.defineProperty(downEvent, 'offsetY', { get: () => offsetY })
-      canvas.dispatchEvent(downEvent)
-      isPointerInitialized = true
-    }
-
     window.addEventListener('mousemove', handleGlobalMouseMove, { passive: true })
-    window.addEventListener('mousedown', handleGlobalMouseDown, { passive: true })
     window.addEventListener('touchmove', handleGlobalTouchMove, { passive: true })
-    window.addEventListener('touchstart', handleGlobalTouchStart, { passive: true })
 
     const handleResize = () => {
       if (!canvas) return
@@ -143,9 +92,7 @@ export default function FluidCursorBackground() {
 
     return () => {
       window.removeEventListener('mousemove', handleGlobalMouseMove)
-      window.removeEventListener('mousedown', handleGlobalMouseDown)
       window.removeEventListener('touchmove', handleGlobalTouchMove)
-      window.removeEventListener('touchstart', handleGlobalTouchStart)
       window.removeEventListener('resize', handleResize)
     }
   }, [])
@@ -154,10 +101,11 @@ export default function FluidCursorBackground() {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       <canvas
         ref={canvasRef}
-        className="w-full h-full block opacity-95 transition-opacity duration-500"
+        className="w-full h-full block opacity-85 transition-opacity duration-500"
       />
     </div>
   )
 }
+
 
 

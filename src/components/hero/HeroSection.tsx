@@ -210,13 +210,8 @@ export default function HeroSection() {
 
       </div>
 
-      {/* ── BOTTOM SUBTLE FOOTER NOTE / COPYRIGHT ── */}
-      <div className="w-full max-w-6xl mx-auto flex items-center justify-between text-[11px] sm:text-[12px] text-fg-tertiary pt-4 border-t border-sep-subtle/50 z-20">
-        <span>© {new Date().getFullYear()} Ritesh Ranjan Panda</span>
-        <span className="font-mono text-[11px]">AI Systems · Research · Engineering</span>
-      </div>
-
     </div>
   )
 }
+
 
