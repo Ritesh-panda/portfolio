@@ -167,7 +167,7 @@ export default function WorkSection({ onSelectProject }: WorkSectionProps) {
   }
 
   return (
-    <div className="w-full select-none py-8 md:py-14 bg-bg-primary">
+    <div className="w-full select-none py-8 md:py-14 bg-transparent">
       <div className="container-content max-w-5xl mx-auto space-y-14 md:space-y-20 px-4 sm:px-6">
         
         {/* ── SECTION 1: ENGINEERING SYSTEMS (ABOVE) ── */}

@@ -23,7 +23,7 @@ export default function AchievementsPage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full select-none pt-20 sm:pt-24 pb-20 md:pb-28 bg-bg-primary text-fg-primary"
+      className="w-full select-none pt-20 sm:pt-24 pb-20 md:pb-28 bg-transparent text-fg-primary"
     >
       <SEO
         title="Ritesh Panda — Achievements & Competitions"

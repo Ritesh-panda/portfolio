@@ -16,7 +16,7 @@ export default function ResearchSection({ onSelectResearch }: ResearchSectionPro
   const paper = RESEARCH_PAPERS[0]
 
   return (
-    <div className="w-full select-none py-16 md:py-28 bg-bg-primary">
+    <div className="w-full select-none py-16 md:py-28 bg-transparent">
       <div className="container-content max-w-6xl mx-auto">
         
         {/* ── 1. SECTION OPENING ── */}

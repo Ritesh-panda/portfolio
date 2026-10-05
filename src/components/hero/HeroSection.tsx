@@ -10,7 +10,7 @@ import { AmazonLogo, CiscoLogo, BainLogo } from '../common/CompanyLogos'
  */
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center select-none bg-bg-primary overflow-x-hidden px-4 sm:px-6 md:px-10 lg:px-12 py-10 sm:py-12 xl:py-16">
+    <div className="relative w-full min-h-screen flex items-center justify-center select-none bg-transparent overflow-x-hidden px-4 sm:px-6 md:px-10 lg:px-12 py-10 sm:py-12 xl:py-16">
       <div className="w-full max-w-6xl mx-auto flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-8 sm:gap-10 xl:gap-14 relative">
         
         {/* ── 1. CENTER / PRIMARY EDITORIAL CONTENT ── */}
