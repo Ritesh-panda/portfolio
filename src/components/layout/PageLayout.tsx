@@ -11,12 +11,12 @@ interface PageLayoutProps {
  */
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <main id="top" className="min-h-screen bg-bg-primary relative overflow-x-hidden">
-      {/* Interactive Holographic Pastel Fluid Canvas */}
+    <main id="top" className="min-h-screen bg-gradient-to-br from-[#FCF7FA] via-[#FAF4F8] to-[#F7F2F9] relative overflow-x-hidden text-fg-primary">
+      {/* Interactive WebGL Water Fluid Canvas */}
       <FluidCursorBackground />
 
       {/* Primary Page Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 pointer-events-auto">
         {children}
       </div>
     </main>
