@@ -16,7 +16,7 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Initialize WebGL Navier-Stokes Jellyfish Fluid Simulation
+    // Initialize WebGL Navier-Stokes Jellyfish Fluid Simulation with ~7s longevity & rich density
     try {
       WebGLFluid(canvas, {
         IMMEDIATE: true,
@@ -25,13 +25,13 @@ export default function FluidCursorBackground() {
         SIM_RESOLUTION: 256, // High resolution for crisp liquid edges
         DYE_RESOLUTION: 1024, // HD silky color quality
         CAPTURE_RESOLUTION: 512,
-        DENSITY_DISSIPATION: 2.4, // Clean graceful dissipation without persistent muddy accumulation
-        VELOCITY_DISSIPATION: 1.6, // Silky underwater gliding resistance like a jellyfish
+        DENSITY_DISSIPATION: 0.9, // ~7-second graceful fluid longevity and rich color retention
+        VELOCITY_DISSIPATION: 1.15, // Silky underwater gliding resistance like a jellyfish
         PRESSURE: 0.8,
         PRESSURE_ITERATIONS: 25,
-        CURL: 18, // Undulating organic ripples and curling tendrils
-        SPLAT_RADIUS: 0.22, // Refined translucent fluid ribbons
-        SPLAT_FORCE: 4200, // Natural responsive wave momentum
+        CURL: 22, // Undulating organic ripples and curling tendrils
+        SPLAT_RADIUS: 0.28, // Enhanced color stroke thickness & density
+        SPLAT_FORCE: 4500, // Rich, responsive fluid wave momentum
         SHADING: true, // 3D specular sheen and translucent depth
         COLORFUL: true, // Bioluminescent pastel color gradient cycle
         COLOR_UPDATE_SPEED: 8,
@@ -154,9 +154,10 @@ export default function FluidCursorBackground() {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       <canvas
         ref={canvasRef}
-        className="w-full h-full block opacity-90 transition-opacity duration-500"
+        className="w-full h-full block opacity-95 transition-opacity duration-500"
       />
     </div>
   )
 }
+
 
