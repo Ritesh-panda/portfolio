@@ -7,9 +7,9 @@
      LIGHT MODE — Apple HIG-Inspired Semantic Roles
   ───────────────────────────────────────────────*/
   :root {
-    /* Backgrounds — Light Rose Pink / BTS Violet Luminous Tint */
-    --bg-primary:     #FAF5F8;
-    --bg-secondary:   #F5EFF4;
+    /* Backgrounds — Soft Rose Pink / BTS Pastel Violet Tint */
+    --bg-primary:     #FDF0F5;
+    --bg-secondary:   #F6E6F2;
     --bg-tertiary:    #FFFFFF;
 
     /* Foreground / Text */
