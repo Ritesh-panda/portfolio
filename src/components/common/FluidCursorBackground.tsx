@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 import WebGLFluid from 'webgl-fluid'
 
 /**
- * FluidCursorBackground — Navier-Stokes WebGL Dense Silky Water & Liquid Marble Simulation
- * Exact liquid marbling physics with 10-second longevity, silky 3D sheen,
- * glossy surface curvature, and smooth curling wave momentum.
+ * FluidCursorBackground — Translucent Jellyfish Bioluminescent Fluid Wave Simulation
+ * Clean on load (zero initial splatters/rangoli), reacting gracefully to cursor/touch gestures
+ * with floating, translucent, bioluminescent water ripples.
  */
 export default function FluidCursorBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -16,7 +16,7 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Initialize WebGL Navier-Stokes Silky Liquid Fluid Simulation
+    // Initialize WebGL Navier-Stokes Jellyfish Fluid Simulation
     try {
       WebGLFluid(canvas, {
         IMMEDIATE: true,
@@ -25,16 +25,16 @@ export default function FluidCursorBackground() {
         SIM_RESOLUTION: 256, // High resolution for crisp liquid edges
         DYE_RESOLUTION: 1024, // HD silky color quality
         CAPTURE_RESOLUTION: 512,
-        DENSITY_DISSIPATION: 0.22, // ~10-second long-lasting dye longevity (thick liquid retention)
-        VELOCITY_DISSIPATION: 0.985, // Smooth liquid wave momentum: rolls and swirls like water for seconds
+        DENSITY_DISSIPATION: 2.4, // Clean graceful dissipation without persistent muddy accumulation
+        VELOCITY_DISSIPATION: 1.6, // Silky underwater gliding resistance like a jellyfish
         PRESSURE: 0.8,
         PRESSURE_ITERATIONS: 25,
-        CURL: 28, // Distinct curling liquid wave vortices (produces the marbled crescent wave)
-        SPLAT_RADIUS: 0.3, // Silky liquid stroke thickness
-        SPLAT_FORCE: 5500, // Natural fluid wave momentum on swipe
-        SHADING: true, // 3D specular sheen, depth & highlights
-        COLORFUL: true, // Vibrant holographic pastel color cycle
-        COLOR_UPDATE_SPEED: 10,
+        CURL: 18, // Undulating organic ripples and curling tendrils
+        SPLAT_RADIUS: 0.22, // Refined translucent fluid ribbons
+        SPLAT_FORCE: 4200, // Natural responsive wave momentum
+        SHADING: true, // 3D specular sheen and translucent depth
+        COLORFUL: true, // Bioluminescent pastel color gradient cycle
+        COLOR_UPDATE_SPEED: 8,
         PAUSED: false,
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: true,
@@ -134,25 +134,6 @@ export default function FluidCursorBackground() {
     window.addEventListener('touchmove', handleGlobalTouchMove, { passive: true })
     window.addEventListener('touchstart', handleGlobalTouchStart, { passive: true })
 
-    // Auto initial splash on page load
-    const triggerInitialRipple = () => {
-      if (!canvas) return
-      const rect = canvas.getBoundingClientRect()
-      const x = rect.width * 0.5
-      const y = rect.height * 0.35
-      const downEvent = new MouseEvent('mousedown', { clientX: x, clientY: y, bubbles: false })
-      Object.defineProperty(downEvent, 'offsetX', { get: () => x })
-      Object.defineProperty(downEvent, 'offsetY', { get: () => y })
-      canvas.dispatchEvent(downEvent)
-
-      const moveEvent = new MouseEvent('mousemove', { clientX: x + 90, clientY: y + 35, bubbles: false })
-      Object.defineProperty(moveEvent, 'offsetX', { get: () => x + 90 })
-      Object.defineProperty(moveEvent, 'offsetY', { get: () => y + 35 })
-      canvas.dispatchEvent(moveEvent)
-    }
-
-    const timer = setTimeout(triggerInitialRipple, 300)
-
     const handleResize = () => {
       if (!canvas) return
       canvas.width = window.innerWidth
@@ -161,7 +142,6 @@ export default function FluidCursorBackground() {
     window.addEventListener('resize', handleResize)
 
     return () => {
-      clearTimeout(timer)
       window.removeEventListener('mousemove', handleGlobalMouseMove)
       window.removeEventListener('mousedown', handleGlobalMouseDown)
       window.removeEventListener('touchmove', handleGlobalTouchMove)
@@ -174,8 +154,9 @@ export default function FluidCursorBackground() {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       <canvas
         ref={canvasRef}
-        className="w-full h-full block opacity-95 transition-opacity duration-500"
+        className="w-full h-full block opacity-90 transition-opacity duration-500"
       />
     </div>
   )
 }
+
