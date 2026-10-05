@@ -16,7 +16,7 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Initialize WebGL Navier-Stokes Jellyfish Fluid Simulation with ~7s longevity & rich density
+    // Initialize WebGL Navier-Stokes Bioluminescent Jellyfish Fluid Simulation
     try {
       WebGLFluid(canvas, {
         IMMEDIATE: true,
@@ -29,16 +29,21 @@ export default function FluidCursorBackground() {
         VELOCITY_DISSIPATION: 1.15, // Silky underwater gliding resistance like a jellyfish
         PRESSURE: 0.8,
         PRESSURE_ITERATIONS: 25,
-        CURL: 22, // Undulating organic ripples and curling tendrils
+        CURL: 26, // Undulating organic ripples and curling tendrils
         SPLAT_RADIUS: 0.28, // Enhanced color stroke thickness & density
-        SPLAT_FORCE: 4500, // Rich, responsive fluid wave momentum
+        SPLAT_FORCE: 4800, // Rich, responsive fluid wave momentum
         SHADING: true, // 3D specular sheen and translucent depth
         COLORFUL: true, // Bioluminescent pastel color gradient cycle
-        COLOR_UPDATE_SPEED: 8,
+        COLOR_UPDATE_SPEED: 10,
         PAUSED: false,
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: true,
-        BLOOM: false,
+        BLOOM: true, // Bioluminescent glow around fluid wave edges
+        BLOOM_ITERATIONS: 8,
+        BLOOM_RESOLUTION: 256,
+        BLOOM_INTENSITY: 0.55,
+        BLOOM_THRESHOLD: 0.65,
+        BLOOM_SOFT_KNEE: 0.7,
         SUNRAYS: false,
       })
     } catch (err) {
