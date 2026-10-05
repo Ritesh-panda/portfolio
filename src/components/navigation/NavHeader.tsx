@@ -43,12 +43,17 @@ export default function NavHeader() {
             className="flex items-center justify-between h-14"
             aria-label="Main navigation"
           >
-            {/* ── Name / Logo ── */}
+            {/* ── Name / 'R' Logo ── */}
             <Link
               to="/"
-              className="text-[15px] font-semibold text-fg-primary tracking-[-0.02em] hover:text-brand transition-colors duration-200 ease-apple"
+              className="flex items-center gap-2.5 group cursor-pointer"
             >
-              Ritesh Panda
+              <div className="w-8 h-8 rounded-xl bg-fg-primary text-bg-primary font-bold flex items-center justify-center text-[15px] tracking-tight shadow-xs group-hover:scale-105 transition-transform duration-200">
+                R
+              </div>
+              <span className="text-[15px] font-semibold text-fg-primary tracking-[-0.02em] group-hover:text-brand transition-colors duration-200">
+                Ritesh Panda
+              </span>
             </Link>
 
             {/* ── Desktop links ── */}
