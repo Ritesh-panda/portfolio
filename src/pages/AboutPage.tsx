@@ -52,8 +52,8 @@ export default function AboutPage() {
         </div>
 
         {/* ── 2. APPLE-STYLE SEGMENTED TAB SWITCHER (STICKY BELOW BACK-TO-HOME) ── */}
-        <div className="sticky top-14 sm:top-20 z-40 flex items-center justify-center py-2 pointer-events-auto max-w-full px-1">
-          <div className="p-1 sm:p-1.5 rounded-full bg-bg-secondary/95 backdrop-blur-md border border-sep-standard shadow-sm flex items-center gap-1 max-w-full overflow-x-auto scrollbar-none px-1.5 sm:px-2">
+        <div className="sticky top-14 sm:top-20 z-40 w-full flex items-center justify-start sm:justify-center py-2 pointer-events-auto overflow-x-auto scrollbar-none px-1">
+          <div className="inline-flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-full bg-bg-secondary/95 backdrop-blur-md border border-sep-standard shadow-sm flex-nowrap shrink-0 mx-auto">
             {TABS.map((tab) => {
               const Icon = tab.icon
               const isActive = activeTab === tab.id

@@ -30,12 +30,12 @@ function ContentRoutes({ onSelectProject, onSelectResearch }: ContentRoutesProps
     <PageLayout>
       {/* ── Stationary Fixed Back to Home Navigation on all subpages ── */}
       {!isHomePage && (
-        <div className="fixed top-5 left-5 sm:top-6 sm:left-8 z-50 pointer-events-auto">
+        <div className="fixed top-3 left-3 sm:top-5 sm:left-6 z-50 pointer-events-auto">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-[13.5px] font-medium text-fg-secondary hover:text-fg-primary bg-bg-secondary/85 hover:bg-bg-secondary border border-sep-standard hover:border-brand/50 backdrop-blur-md shadow-elev-1 hover:shadow-elev-2 transition-all duration-200 py-2 px-4 rounded-full group"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-[12.5px] sm:text-[13.5px] font-medium text-fg-secondary hover:text-fg-primary bg-bg-secondary/90 hover:bg-bg-secondary border border-sep-standard hover:border-brand/50 backdrop-blur-md shadow-elev-1 hover:shadow-elev-2 transition-all duration-200 py-1.5 sm:py-2 px-3 sm:px-4 rounded-full group"
           >
-            <ArrowLeft size={14} className="transition-transform duration-200 group-hover:-translate-x-0.5 text-fg-tertiary group-hover:text-brand" />
+            <ArrowLeft size={13} className="transition-transform duration-200 group-hover:-translate-x-0.5 text-fg-tertiary group-hover:text-brand" />
             <span>Back to Home</span>
           </Link>
         </div>
