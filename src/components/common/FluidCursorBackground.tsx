@@ -17,6 +17,7 @@ export default function FluidCursorBackground() {
     canvas.height = window.innerHeight
 
     // Initialize WebGL Navier-Stokes Silky Liquid Fluid Simulation
+    // Configured for Pure Laminar Curves (vortex pair) without zig-zag turbulence
     try {
       WebGLFluid(canvas, {
         IMMEDIATE: true,
@@ -25,16 +26,16 @@ export default function FluidCursorBackground() {
         SIM_RESOLUTION: 256, // Ultra-crisp liquid resolution
         DYE_RESOLUTION: 1024, // Bold, high-definition dye saturation
         CAPTURE_RESOLUTION: 512,
-        DENSITY_DISSIPATION: 0.025, // Ultra-high color & fluid density — paint retains rich body and marble ribbons
-        VELOCITY_DISSIPATION: 0.988, // Silky fluid inertia for viscous liquid marble movement
-        PRESSURE: 0.88,
-        PRESSURE_ITERATIONS: 32, // High precision pressure solver for crisp boundary curves
-        CURL: 85, // Extremely high curve factor: dramatic curving swirls, liquid whirlpools, and fluid ribbon arcs
-        SPLAT_RADIUS: 0.65, // Dense, thick, rich fluid paint stroke volume
-        SPLAT_FORCE: 7500, // Dynamic responsive fluid velocity
-        SHADING: true, // Deep 3D liquid highlights & specular sheen
-        COLORFUL: true, // Vibrant chromatic transitions
-        COLOR_UPDATE_SPEED: 14,
+        DENSITY_DISSIPATION: 0.02, // Dense, bold paint that lasts 10+ seconds
+        VELOCITY_DISSIPATION: 0.982, // Smooth, continuous forward gliding inertia
+        PRESSURE: 0.92, // Strong incompressible pressure for pure circular/curved bow waves
+        PRESSURE_ITERATIONS: 36, // Maximum solver precision for pristine smooth curves
+        CURL: 22, // Pure laminar curve factor (eliminates chaotic zig-zags; creates smooth twin-ear vortex loops)
+        SPLAT_RADIUS: 0.55, // Dense, smooth, rich liquid paint volume
+        SPLAT_FORCE: 6800, // Forward-propelling liquid wave momentum
+        SHADING: true, // Deep 3D specular liquid sheen
+        COLORFUL: true, // Chromatic spectrum
+        COLOR_UPDATE_SPEED: 12,
         PAUSED: false,
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: true,
@@ -46,18 +47,47 @@ export default function FluidCursorBackground() {
     }
 
     let isPointerInitialized = false
+    let lastRawX = 0
+    let lastRawY = 0
+    let smoothDirX = 0
+    let smoothDirY = 0
 
-    // Safely forward global window mouse events into WebGL canvas with recursion protection
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      if (!e.isTrusted || !canvas) return
+    // Forward projected splash offset: ~1.5 cm (~55px) ahead of cursor in movement direction
+    const FORWARD_OFFSET_PX = 55
+
+    const dispatchFluidPoint = (rawX: number, rawY: number, isDown = false) => {
+      if (!canvas) return
       const rect = canvas.getBoundingClientRect()
-      const offsetX = e.clientX - rect.left
-      const offsetY = e.clientY - rect.top
 
-      if (!isPointerInitialized) {
+      const dx = rawX - (lastRawX || rawX)
+      const dy = rawY - (lastRawY || rawY)
+      const dist = Math.hypot(dx, dy)
+
+      // Smooth the direction vector to eliminate hand jitter and zig-zag noise
+      if (dist > 1.5) {
+        const targetDirX = dx / dist
+        const targetDirY = dy / dist
+        smoothDirX += (targetDirX - smoothDirX) * 0.45
+        smoothDirY += (targetDirY - smoothDirY) * 0.45
+        const smoothMag = Math.hypot(smoothDirX, smoothDirY) || 1
+        smoothDirX /= smoothMag
+        smoothDirY /= smoothMag
+      }
+
+      lastRawX = rawX
+      lastRawY = rawY
+
+      // Project the splash 1-2 cm ahead in the stroke direction
+      const projectedX = rawX + smoothDirX * FORWARD_OFFSET_PX
+      const projectedY = rawY + smoothDirY * FORWARD_OFFSET_PX
+
+      const offsetX = projectedX - rect.left
+      const offsetY = projectedY - rect.top
+
+      if (isDown || !isPointerInitialized) {
         const downEvent = new MouseEvent('mousedown', {
-          clientX: e.clientX,
-          clientY: e.clientY,
+          clientX: projectedX,
+          clientY: projectedY,
           bubbles: false,
         })
         Object.defineProperty(downEvent, 'offsetX', { get: () => offsetX })
@@ -67,8 +97,8 @@ export default function FluidCursorBackground() {
       }
 
       const moveEvent = new MouseEvent('mousemove', {
-        clientX: e.clientX,
-        clientY: e.clientY,
+        clientX: projectedX,
+        clientY: projectedY,
         bubbles: false,
       })
       Object.defineProperty(moveEvent, 'offsetX', { get: () => offsetX })
@@ -76,57 +106,28 @@ export default function FluidCursorBackground() {
       canvas.dispatchEvent(moveEvent)
     }
 
+    // Safely forward global window mouse events
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (!e.isTrusted || !canvas) return
+      dispatchFluidPoint(e.clientX, e.clientY, false)
+    }
+
     const handleGlobalMouseDown = (e: MouseEvent) => {
       if (!e.isTrusted || !canvas) return
-      const rect = canvas.getBoundingClientRect()
-      const offsetX = e.clientX - rect.left
-      const offsetY = e.clientY - rect.top
-
-      const downEvent = new MouseEvent('mousedown', {
-        clientX: e.clientX,
-        clientY: e.clientY,
-        bubbles: false,
-      })
-      Object.defineProperty(downEvent, 'offsetX', { get: () => offsetX })
-      Object.defineProperty(downEvent, 'offsetY', { get: () => offsetY })
-      canvas.dispatchEvent(downEvent)
-      isPointerInitialized = true
+      dispatchFluidPoint(e.clientX, e.clientY, true)
     }
 
     // Touch event forwarder
     const handleGlobalTouchMove = (e: TouchEvent) => {
       if (!e.isTrusted || !canvas || e.touches.length === 0) return
       const touch = e.touches[0]
-      const rect = canvas.getBoundingClientRect()
-      const offsetX = touch.clientX - rect.left
-      const offsetY = touch.clientY - rect.top
-
-      const moveEvent = new MouseEvent('mousemove', {
-        clientX: touch.clientX,
-        clientY: touch.clientY,
-        bubbles: false,
-      })
-      Object.defineProperty(moveEvent, 'offsetX', { get: () => offsetX })
-      Object.defineProperty(moveEvent, 'offsetY', { get: () => offsetY })
-      canvas.dispatchEvent(moveEvent)
+      dispatchFluidPoint(touch.clientX, touch.clientY, false)
     }
 
     const handleGlobalTouchStart = (e: TouchEvent) => {
       if (!e.isTrusted || !canvas || e.touches.length === 0) return
       const touch = e.touches[0]
-      const rect = canvas.getBoundingClientRect()
-      const offsetX = touch.clientX - rect.left
-      const offsetY = touch.clientY - rect.top
-
-      const downEvent = new MouseEvent('mousedown', {
-        clientX: touch.clientX,
-        clientY: touch.clientY,
-        bubbles: false,
-      })
-      Object.defineProperty(downEvent, 'offsetX', { get: () => offsetX })
-      Object.defineProperty(downEvent, 'offsetY', { get: () => offsetY })
-      canvas.dispatchEvent(downEvent)
-      isPointerInitialized = true
+      dispatchFluidPoint(touch.clientX, touch.clientY, true)
     }
 
     window.addEventListener('mousemove', handleGlobalMouseMove, { passive: true })
@@ -140,15 +141,10 @@ export default function FluidCursorBackground() {
       const rect = canvas.getBoundingClientRect()
       const x = rect.width * 0.5
       const y = rect.height * 0.35
-      const downEvent = new MouseEvent('mousedown', { clientX: x, clientY: y, bubbles: false })
-      Object.defineProperty(downEvent, 'offsetX', { get: () => x })
-      Object.defineProperty(downEvent, 'offsetY', { get: () => y })
-      canvas.dispatchEvent(downEvent)
-
-      const moveEvent = new MouseEvent('mousemove', { clientX: x + 90, clientY: y + 35, bubbles: false })
-      Object.defineProperty(moveEvent, 'offsetX', { get: () => x + 90 })
-      Object.defineProperty(moveEvent, 'offsetY', { get: () => y + 35 })
-      canvas.dispatchEvent(moveEvent)
+      smoothDirX = 0.8
+      smoothDirY = 0.4
+      dispatchFluidPoint(x, y, true)
+      dispatchFluidPoint(x + 70, y + 30, false)
     }
 
     const timer = setTimeout(triggerInitialRipple, 300)
