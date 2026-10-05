@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 import WebGLFluid from 'webgl-fluid'
 
 /**
- * FluidCursorBackground — Navier-Stokes WebGL Fluid Physics Simulation
- * Real water-physics fluid dynamics with flashing iridescent pastel colors,
- * velocity advection, curl vorticity, and 3D specular water highlights.
+ * FluidCursorBackground — Navier-Stokes WebGL Dense Viscous Liquid Simulation
+ * Tuned for heavy, rich, dense liquid paint flow with directional cursor wake,
+ * high color density, smooth viscous inertia, and glossy 3D liquid highlights.
  */
 export default function FluidCursorBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -16,7 +16,7 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Initialize WebGL Navier-Stokes Fluid Simulation
+    // Initialize WebGL Navier-Stokes Dense Fluid Simulation
     try {
       WebGLFluid(canvas, {
         IMMEDIATE: true,
@@ -25,16 +25,16 @@ export default function FluidCursorBackground() {
         SIM_RESOLUTION: 128,
         DYE_RESOLUTION: 1024,
         CAPTURE_RESOLUTION: 512,
-        DENSITY_DISSIPATION: 1.8, // Smooth water dye dispersion
-        VELOCITY_DISSIPATION: 0.98, // Water inertia
-        PRESSURE: 0.8,
-        PRESSURE_ITERATIONS: 20,
-        CURL: 35, // Water vortex & curling ripples
-        SPLAT_RADIUS: 0.35, // Splash radius
-        SPLAT_FORCE: 6500, // Reactive force
-        SHADING: true, // 3D liquid highlights
-        COLORFUL: true, // Flashing iridescent colors
-        COLOR_UPDATE_SPEED: 14,
+        DENSITY_DISSIPATION: 0.95, // Thick color density: dye lingers richly instead of fading instantly
+        VELOCITY_DISSIPATION: 2.8, // Heavy viscous liquid drag: moves smoothly, not like thin free gas
+        PRESSURE: 0.85,
+        PRESSURE_ITERATIONS: 25,
+        CURL: 12, // Controlled curl: flows along cursor stroke direction without chaotic random spread
+        SPLAT_RADIUS: 0.42, // Rich, dense, juicy liquid stroke
+        SPLAT_FORCE: 3200, // Focused directional flow matching cursor velocity
+        SHADING: true, // Deep 3D liquid specular lighting
+        COLORFUL: true, // Vibrant chromatic transitions
+        COLOR_UPDATE_SPEED: 8, // Smooth, elegant color evolution along the stroke
         PAUSED: false,
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: true,
@@ -145,9 +145,9 @@ export default function FluidCursorBackground() {
       Object.defineProperty(downEvent, 'offsetY', { get: () => y })
       canvas.dispatchEvent(downEvent)
 
-      const moveEvent = new MouseEvent('mousemove', { clientX: x + 60, clientY: y + 30, bubbles: false })
-      Object.defineProperty(moveEvent, 'offsetX', { get: () => x + 60 })
-      Object.defineProperty(moveEvent, 'offsetY', { get: () => y + 30 })
+      const moveEvent = new MouseEvent('mousemove', { clientX: x + 80, clientY: y + 20, bubbles: false })
+      Object.defineProperty(moveEvent, 'offsetX', { get: () => x + 80 })
+      Object.defineProperty(moveEvent, 'offsetY', { get: () => y + 20 })
       canvas.dispatchEvent(moveEvent)
     }
 
