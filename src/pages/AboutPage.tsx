@@ -52,8 +52,8 @@ export default function AboutPage() {
         </div>
 
         {/* ── 2. APPLE-STYLE SEGMENTED TAB SWITCHER (STICKY BELOW BACK-TO-HOME) ── */}
-        <div className="sticky top-16 sm:top-20 z-40 flex items-center justify-center py-2 pointer-events-auto">
-          <div className="p-1 sm:p-1.5 rounded-full bg-bg-secondary/95 backdrop-blur-md border border-sep-standard shadow-sm flex flex-wrap items-center justify-center gap-1 max-w-full">
+        <div className="sticky top-14 sm:top-20 z-40 flex items-center justify-center py-2 pointer-events-auto max-w-full px-1">
+          <div className="p-1 sm:p-1.5 rounded-full bg-bg-secondary/95 backdrop-blur-md border border-sep-standard shadow-sm flex items-center gap-1 max-w-full overflow-x-auto scrollbar-none px-1.5 sm:px-2">
             {TABS.map((tab) => {
               const Icon = tab.icon
               const isActive = activeTab === tab.id
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[12.5px] sm:text-[13.5px] font-medium transition-all duration-200 cursor-pointer ${
+                  className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[12px] sm:text-[13.5px] font-medium whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 ${
                     isActive
                       ? 'bg-fg-primary text-bg-primary shadow-xs'
                       : 'text-fg-secondary hover:text-fg-primary hover:bg-bg-primary/60'
