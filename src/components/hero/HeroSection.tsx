@@ -151,20 +151,20 @@ export default function HeroSection() {
 
         {/* ── RIGHT COLUMN: 3D PORTRAIT & NAVIGATION BARS BELOW IT ── */}
         <div className="lg:col-span-5 flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-          {/* 3D PORTRAIT AVATAR */}
+          {/* 3D PORTRAIT AVATAR (SEAMLESS INVISIBLE ROUNDED SQUARE) */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 12 }}
+            initial={{ opacity: 0, scale: 0.94, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
             className="relative mb-5 sm:mb-6 flex items-center justify-center"
           >
-            <div className="w-[170px] h-[170px] sm:w-[210px] sm:h-[210px] md:w-[230px] md:h-[230px] rounded-full overflow-hidden flex items-center justify-center ring-2 ring-sep-subtle shadow-elev-2 bg-bg-secondary">
+            <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] rounded-[32px] sm:rounded-[38px] overflow-hidden flex items-center justify-center bg-transparent select-none">
               <img
                 src={avatarImg}
                 alt="Ritesh Ranjan Panda — AI/ML Engineer & Product-Minded Builder"
-                width={230}
-                height={230}
-                className="w-full h-full object-cover object-top select-none hover:scale-105 transition-transform duration-500"
+                width={240}
+                height={240}
+                className="w-full h-full object-cover object-top select-none rounded-[32px] sm:rounded-[38px] hover:scale-105 transition-transform duration-500"
                 loading="eager"
               />
             </div>

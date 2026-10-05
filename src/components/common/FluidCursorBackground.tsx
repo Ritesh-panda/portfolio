@@ -16,7 +16,7 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Initialize WebGL Navier-Stokes Bioluminescent Jellyfish Fluid Simulation
+    // Initialize WebGL Navier-Stokes Jellyfish Fluid Simulation with gentle silky pastel waves
     try {
       WebGLFluid(canvas, {
         IMMEDIATE: true,
@@ -25,25 +25,20 @@ export default function FluidCursorBackground() {
         SIM_RESOLUTION: 256, // High resolution for crisp liquid edges
         DYE_RESOLUTION: 1024, // HD silky color quality
         CAPTURE_RESOLUTION: 512,
-        DENSITY_DISSIPATION: 0.9, // ~7-second graceful fluid longevity and rich color retention
-        VELOCITY_DISSIPATION: 1.15, // Silky underwater gliding resistance like a jellyfish
+        DENSITY_DISSIPATION: 0.9, // ~7-second graceful fluid longevity
+        VELOCITY_DISSIPATION: 1.2, // Silky underwater gliding resistance
         PRESSURE: 0.8,
         PRESSURE_ITERATIONS: 25,
-        CURL: 26, // Undulating organic ripples and curling tendrils
-        SPLAT_RADIUS: 0.28, // Enhanced color stroke thickness & density
-        SPLAT_FORCE: 4800, // Rich, responsive fluid wave momentum
-        SHADING: true, // 3D specular sheen and translucent depth
-        COLORFUL: true, // Bioluminescent pastel color gradient cycle
-        COLOR_UPDATE_SPEED: 10,
+        CURL: 20, // Gentle, undulating organic ripples
+        SPLAT_RADIUS: 0.25, // Refined silky ribbons
+        SPLAT_FORCE: 4000, // Natural fluid wave momentum
+        SHADING: false, // Soft flat liquid shading (no harsh blinding white specular flashes)
+        COLORFUL: true, // Smooth pastel violet/rose/lilac color gradient cycle
+        COLOR_UPDATE_SPEED: 6,
         PAUSED: false,
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: true,
-        BLOOM: true, // Bioluminescent glow around fluid wave edges
-        BLOOM_ITERATIONS: 8,
-        BLOOM_RESOLUTION: 256,
-        BLOOM_INTENSITY: 0.55,
-        BLOOM_THRESHOLD: 0.65,
-        BLOOM_SOFT_KNEE: 0.7,
+        BLOOM: false, // Disabled to eliminate blinding firecracker brightness
         SUNRAYS: false,
       })
     } catch (err) {
