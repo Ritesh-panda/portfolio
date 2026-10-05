@@ -16,13 +16,14 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Curated solid 3D liquid palette (Deep Royal Violet, Rich Indigo, Velvet Plum, Slate Sapphire, Rich Amethyst)
+    // Curated solid 3D liquid palette calibrated to prevent additive white burnout
+    // Deep Royal Violet, Rich Indigo, Velvet Plum Rose, Slate Sapphire, Rich Amethyst
     const SOLID_3D_PALETTE = [
-      { r: 0.28, g: 0.16, b: 0.58 }, // Deep Royal Violet
-      { r: 0.20, g: 0.24, b: 0.62 }, // Rich Indigo
-      { r: 0.45, g: 0.15, b: 0.38 }, // Velvet Plum Rose
-      { r: 0.18, g: 0.32, b: 0.55 }, // Slate Sapphire
-      { r: 0.40, g: 0.18, b: 0.48 }, // Rich Amethyst
+      { r: 0.05, g: 0.02, b: 0.12 }, // Deep Royal Violet (pure pigment, zero white burnout)
+      { r: 0.03, g: 0.04, b: 0.13 }, // Rich Indigo
+      { r: 0.09, g: 0.02, b: 0.07 }, // Velvet Plum Rose
+      { r: 0.02, g: 0.06, b: 0.11 }, // Slate Sapphire
+      { r: 0.07, g: 0.03, b: 0.10 }, // Rich Amethyst
     ]
 
     let paletteIndex = 0
@@ -39,11 +40,11 @@ export default function FluidCursorBackground() {
       PRESSURE: 0.8,
       PRESSURE_ITERATIONS: 25,
       CURL: 20, // Gentle, undulating organic ripples
-      SPLAT_RADIUS: 0.24, // Rich solid color stroke
-      SPLAT_FORCE: 3800, // Natural responsive fluid wave momentum
-      SHADING: true, // Real 3D liquid volume, depth and shadows
+      SPLAT_RADIUS: 0.22, // Refined silky ribbons
+      SPLAT_FORCE: 3500, // Natural responsive fluid wave momentum
+      SHADING: false, // Disables specular highlight reflections that cause white core burnout
       COLORFUL: false, // Disables random bright neon HSL cycling
-      SPLAT_COLOR: SOLID_3D_PALETTE[0], // Solid 3D pigment
+      SPLAT_COLOR: SOLID_3D_PALETTE[0], // Solid calibrated pigment
       PAUSED: false,
       BACK_COLOR: { r: 0, g: 0, b: 0 },
       TRANSPARENT: true,
