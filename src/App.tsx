@@ -48,6 +48,10 @@ function ContentRoutes({ onSelectProject, onSelectResearch }: ContentRoutesProps
           element={<WorkPage onSelectProject={onSelectProject} />}
         />
         <Route
+          path="/projects"
+          element={<WorkPage onSelectProject={onSelectProject} />}
+        />
+        <Route
           path="/research"
           element={<ResearchPage onSelectResearch={onSelectResearch} />}
         />

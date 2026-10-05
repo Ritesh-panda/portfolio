@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import HeroSection from '../components/hero/HeroSection'
+import SEO from '../components/common/SEO'
 
 /**
  * HomePage — Clean Minimalist Entry Point
- * Contains solely the Centered Hero with the 3D avatar, introduction,
- * and quick destination buttons to all sections.
+ * Canonical home of Ritesh Ranjan Panda (AI/ML Engineer & Product-Minded Builder)
  */
 export default function HomePage() {
   return (
@@ -15,7 +15,13 @@ export default function HomePage() {
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col w-full items-center justify-center min-h-[calc(100vh-3.5rem)]"
     >
-      <section id="hero" aria-label="Introduction" className="w-full">
+      <SEO
+        title="Ritesh Panda — AI/ML Engineer & Product-Minded Builder"
+        description="Ritesh Ranjan Panda is an AI/ML engineer and product-minded builder exploring artificial intelligence, intelligent systems, applied research, and product development."
+        canonicalPath="/"
+        ogType="profile"
+      />
+      <section id="hero" aria-label="Ritesh Ranjan Panda Introduction" className="w-full">
         <HeroSection />
       </section>
     </motion.div>

@@ -8,6 +8,7 @@ import {
   MousePointerClick
 } from 'lucide-react'
 import { AmazonLogo, CiscoLogo, BainLogo } from '../components/common/CompanyLogos'
+import SEO from '../components/common/SEO'
 import bainImg from '../assets/bain.png'
 import ciscoImg from '../assets/cisco.png'
 import amzImg from '../assets/amz.png'
@@ -24,6 +25,11 @@ export default function AchievementsPage() {
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       className="w-full select-none pt-20 sm:pt-24 pb-20 md:pb-28 bg-bg-primary text-fg-primary"
     >
+      <SEO
+        title="Ritesh Panda — Achievements & Competitions"
+        description="Competitive milestones, national awards, and case studies of Ritesh Ranjan Panda — Amazon ML Summer School, Cisco Forecast League, and Bain BrAINWARS."
+        canonicalPath="/achievements"
+      />
       <div className="container-content max-w-6xl mx-auto space-y-12 sm:space-y-14 px-4 sm:px-6">
         
         {/* ── 1. HEADER & IDENTITY ── */}
@@ -51,7 +57,9 @@ export default function AchievementsPage() {
             >
               <img
                 src={amzImg}
-                alt="Amazon"
+                alt="Amazon ML Summer School 2026 — Machine Learning & Deep Learning Program"
+                width={640}
+                height={380}
                 className="absolute inset-0 w-full h-full object-cover object-center select-none transition-transform duration-700 ease-apple group-hover:scale-105"
                 loading="lazy"
               />
@@ -114,7 +122,9 @@ export default function AchievementsPage() {
             >
               <img
                 src={bainImg}
-                alt="Bain & Company"
+                alt="Bain BrAINWARS 2026 — Case Study & Strategic Analysis National Semifinalist"
+                width={640}
+                height={380}
                 className="absolute inset-0 w-full h-full object-cover object-center select-none transition-transform duration-700 ease-apple group-hover:scale-105"
                 loading="lazy"
               />
@@ -177,7 +187,9 @@ export default function AchievementsPage() {
             >
               <img
                 src={ciscoImg}
-                alt="Cisco"
+                alt="Cisco Forecast League 2026 — Rank 8 Finalist Quantitative ML Forecasting Pipeline"
+                width={640}
+                height={380}
                 className="absolute inset-0 w-full h-full object-cover object-center select-none transition-transform duration-700 ease-apple group-hover:scale-105"
                 loading="lazy"
               />

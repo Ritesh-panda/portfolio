@@ -1,0 +1,6 @@
+# robots.txt for https://riteshpanda.com/
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://riteshpanda.com/sitemap.xml

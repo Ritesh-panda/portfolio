@@ -42,7 +42,9 @@ export default function WorkSection({ onSelectProject }: WorkSectionProps) {
           {/* Artwork Image Fully Covered */}
           <img
             src={project.image}
-            alt={project.title}
+            alt={`${project.title} — ${project.subtitle}`}
+            width={640}
+            height={380}
             className="absolute inset-0 w-full h-full object-cover object-center select-none transition-transform duration-700 ease-apple group-hover:scale-105"
             loading="lazy"
           />

@@ -21,7 +21,7 @@ export default function ResearchSection({ onSelectResearch }: ResearchSectionPro
         
         {/* ── 1. SECTION OPENING ── */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-          <motion.h2
+          <motion.h1
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -29,7 +29,7 @@ export default function ResearchSection({ onSelectResearch }: ResearchSectionPro
             className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold text-fg-primary tracking-[-0.03em] leading-tight mb-3"
           >
             Research
-          </motion.h2>
+          </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

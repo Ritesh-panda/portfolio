@@ -15,7 +15,7 @@ export default function HeroSection() {
         
         {/* ── 1. CENTER / PRIMARY EDITORIAL CONTENT ── */}
         <div className="flex flex-col items-center text-center w-full max-w-2xl xl:max-w-3xl mx-auto">
-          {/* 3D AVATAR (RESPONSIVE SCALING) */}
+          {/* 3D AVATAR (RESPONSIVE SCALING & SEO ALT) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -25,14 +25,16 @@ export default function HeroSection() {
             <div className="w-[140px] h-[140px] sm:w-[190px] sm:h-[190px] md:w-[230px] md:h-[230px] rounded-full overflow-hidden flex items-center justify-center ring-1 ring-sep-subtle shadow-elev-2">
               <img
                 src={avatarImg}
-                alt="Ritesh Ranjan Panda"
+                alt="Ritesh Ranjan Panda — AI/ML Engineer & Product-Minded Builder"
+                width={230}
+                height={230}
                 className="w-full h-full object-cover object-top select-none"
                 loading="eager"
               />
             </div>
           </motion.div>
 
-          {/* NAME (FLUID AND ADAPTIVE: FITS ALL MOBILES & LAPTOPS WITHOUT OVERFLOW) */}
+          {/* NAME (H1 CANONICAL IDENTIFIER) */}
           <motion.h1
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,14 +44,14 @@ export default function HeroSection() {
             Ritesh Ranjan Panda
           </motion.h1>
 
-          {/* PRIMARY ROLE */}
+          {/* PRIMARY IDENTITY */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.22, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
             className="text-[clamp(1.15rem,4.2vw,1.45rem)] sm:text-[clamp(1.35rem,2.2vw,1.85rem)] md:text-[26px] lg:text-[29px] font-semibold text-brand tracking-[-0.02em] mb-1.5 sm:mb-2"
           >
-            AI/ML Engineer
+            AI/ML Engineer & Product-Minded Builder
           </motion.div>
 
           {/* SUPPORTING DISCIPLINES */}
@@ -57,20 +59,25 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[12.5px] sm:text-[clamp(0.95rem,1.4vw,1.18rem)] md:text-[17px] text-fg-secondary font-medium tracking-[-0.01em] mb-3 sm:mb-4 px-2"
+            className="text-[12.5px] sm:text-[clamp(0.95rem,1.4vw,1.18rem)] md:text-[17px] text-fg-secondary font-medium tracking-[-0.01em] mb-2 sm:mb-3 px-2"
           >
             AI Systems <span className="text-sep-standard mx-1.5 sm:mx-2">·</span> Research <span className="text-sep-standard mx-1.5 sm:mx-2">·</span> Product Thinking
           </motion.p>
 
-          {/* PHILOSOPHY TAGLINE */}
-          <motion.p
+          {/* NATURAL CONTEXT & PHILOSOPHY TAGLINE */}
+          <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.38, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[13px] sm:text-[15.5px] md:text-[18px] text-fg-secondary max-w-2xl leading-relaxed font-normal mb-5 sm:mb-6 px-3"
+            className="space-y-1.5 mb-5 sm:mb-6 max-w-2xl px-3"
           >
-            Research when the answer isn't known. Engineer when it is. Build when it matters.
-          </motion.p>
+            <p className="text-[13px] sm:text-[15px] md:text-[16.5px] text-fg-secondary leading-relaxed font-normal">
+              Computer Science & Business Systems at VIT. Turning ambiguous problems into reliable, high-performance technology.
+            </p>
+            <p className="text-[12.5px] sm:text-[14px] md:text-[15px] text-fg-tertiary italic font-normal">
+              "Research when the answer isn't known. Engineer when it is. Build when it matters."
+            </p>
+          </motion.div>
 
           {/* ACHIEVEMENT PILLS (RESPONSIVE NO-OVERFLOW WRAP) */}
           <motion.div

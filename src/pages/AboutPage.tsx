@@ -13,6 +13,7 @@ import {
   ExternalLink,
   BookOpen
 } from 'lucide-react'
+import SEO from '../components/common/SEO'
 
 type AboutTab = 'know-me' | 'education' | 'experience' | 'certifications' | 'leadership'
 
@@ -35,6 +36,12 @@ export default function AboutPage() {
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       className="w-full select-none pt-16 sm:pt-20 pb-20 md:pb-28 bg-bg-primary text-fg-primary"
     >
+      <SEO
+        title="About Ritesh Panda — AI/ML Engineer & Product Builder"
+        description="Learn more about Ritesh Ranjan Panda, an AI/ML engineer and CSBS student at VIT focused on intelligent systems, applied research, and scalable products."
+        canonicalPath="/about"
+        ogType="profile"
+      />
       <div className="container-content max-w-6xl mx-auto space-y-10 sm:space-y-12 px-4 sm:px-6">
         
         {/* ── 1. HEADER & IDENTITY ── */}
