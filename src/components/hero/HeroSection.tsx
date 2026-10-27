@@ -25,7 +25,7 @@ export default function HeroSection() {
           title="Ritesh Panda — Home"
           aria-label="Ritesh Panda Home"
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#0C2216] text-[#4ADE80] font-bold flex items-center justify-center text-[18px] sm:text-[20px] tracking-tight shadow-md border border-[#1E4B34] group-hover:border-[#E03E38] group-hover:scale-105 group-hover:shadow-[0_0_16px_rgba(224,62,62,0.35)] transition-all duration-300">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#0C2216] text-[#4ADE80] font-bold flex items-center justify-center text-[18px] sm:text-[20px] tracking-tight shadow-md border border-[#1E4B34] group-hover:border-[#E52222] group-hover:scale-105 group-hover:shadow-[0_0_18px_rgba(229,34,34,0.4)] transition-all duration-300">
             R
           </div>
           <span className="font-bold text-[15px] sm:text-[16px] text-fg-primary tracking-tight hidden sm:inline-block group-hover:text-[#4ADE80] transition-colors duration-200">
@@ -34,7 +34,7 @@ export default function HeroSection() {
         </Link>
 
         {/* Top Right: 3D Social Icons (GitHub, LinkedIn, Gmail) */}
-        <div className="flex items-center gap-3.5 sm:gap-4.5 bg-[#0C1E15]/80 backdrop-blur-md px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full border border-[#1E4B34] hover:border-[#E03E38]/50 transition-colors duration-300 shadow-2xs">
+        <div className="flex items-center gap-3.5 sm:gap-4.5 bg-[#0C1E15]/80 backdrop-blur-md px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full border border-[#1E4B34] hover:border-[#E52222]/50 hover:shadow-[0_0_14px_rgba(229,34,34,0.25)] transition-all duration-300 shadow-2xs">
           <a
             href="https://github.com/Ritesh-panda"
             target="_blank"
@@ -76,25 +76,46 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05, duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0C1E15]/90 border border-[#1E4B34] hover:border-[#E03E38]/60 transition-colors duration-300 mb-3 backdrop-blur-md shadow-2xs"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0C1E15]/90 border border-[#1E4B34] hover:border-[#E52222]/60 transition-colors duration-300 mb-2.5 backdrop-blur-md shadow-2xs"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E03E38] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E03E38]" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E52222] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E52222]" />
             </span>
             <span className="text-[12px] font-medium text-[#A7F3D0]/90 tracking-wide">
               Engineering AI Systems & Products
             </span>
           </motion.div>
 
-          {/* NAME (H1 CANONICAL IDENTIFIER) */}
+          {/* EDITORIAL OVERLINE (Matching "SAME ROADS / NEW PERSPECTIVES" from photo) */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.08, duration: 0.6 }}
+            className="flex items-center gap-2 mb-2 sm:mb-2.5"
+          >
+            <span className="text-[10.5px] sm:text-[11.5px] font-mono uppercase tracking-[0.22em] text-[#85948C]">
+              SYSTEMS ARCHITECTURE
+            </span>
+            <span className="text-[#E52222] font-bold text-[12px]">/</span>
+            <span className="text-[10.5px] sm:text-[11.5px] font-mono uppercase tracking-[0.22em] text-[#85948C]">
+              APPLIED INTELLIGENCE
+            </span>
+          </motion.div>
+
+          {/* TWO-TONE HEADLINE (EXACT REPLICATION OF "BUILT DIFFERENTLY" FROM PHOTO) */}
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(2.2rem,5.5vw,3.6rem)] sm:text-[clamp(2.7rem,4.5vw,4.2rem)] font-bold tracking-[-0.035em] text-fg-primary leading-[1.08] mb-2 sm:mb-3 break-words"
+            className="text-[clamp(2.35rem,5.6vw,4rem)] sm:text-[clamp(2.85rem,4.8vw,4.5rem)] font-black tracking-[-0.035em] leading-[1.06] mb-2 sm:mb-3 break-words"
           >
-            Ritesh Ranjan Panda
+            <span className="text-[#E52222] drop-shadow-[0_0_35px_rgba(229,34,34,0.55)]">
+              RITESH
+            </span>{' '}
+            <span className="text-[#F5F6F7]">
+              RANJAN PANDA
+            </span>
           </motion.h1>
 
           {/* PRIMARY IDENTITY — VISIBLE FOREST GREEN */}
@@ -102,7 +123,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(1.2rem,2.8vw,1.75rem)] font-semibold text-[#38D37E] tracking-[-0.02em] mb-2 sm:mb-3"
+            className="text-[clamp(1.15rem,2.6vw,1.65rem)] font-semibold text-[#38D37E] tracking-[-0.02em] mb-2 sm:mb-3"
           >
             AI/ML Engineer & Product-Minded Builder
           </motion.div>
@@ -140,7 +161,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row flex-wrap items-center lg:items-start justify-center lg:justify-start gap-2.5 sm:gap-3 w-full"
           >
             {/* Amazon ML Summer School */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E03E38]/60 hover:shadow-[0_0_14px_rgba(224,62,62,0.22)] hover:bg-[#122A1E] transition-all duration-300">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E52222]/70 hover:shadow-[0_0_16px_rgba(229,34,34,0.3)] hover:bg-[#122A1E] transition-all duration-300">
               <AmazonLogo className="w-5 h-5 shrink-0 rounded-[4px]" />
               <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
                 Selected @ <strong className="text-white font-semibold">Amazon</strong> ML Summer School ’26
@@ -148,7 +169,7 @@ export default function HeroSection() {
             </div>
 
             {/* Cisco Forecast League */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E03E38]/60 hover:shadow-[0_0_14px_rgba(224,62,62,0.22)] hover:bg-[#122A1E] transition-all duration-300">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E52222]/70 hover:shadow-[0_0_16px_rgba(229,34,34,0.3)] hover:bg-[#122A1E] transition-all duration-300">
               <CiscoLogo className="w-5 h-5 shrink-0 rounded-[4px]" />
               <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
                 Rank 8 Finalist @ <strong className="text-white font-semibold">Cisco</strong> Forecast League ’26
@@ -156,7 +177,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bain BrAINWARS */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E03E38]/60 hover:shadow-[0_0_14px_rgba(224,62,62,0.22)] hover:bg-[#122A1E] transition-all duration-300">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E52222]/70 hover:shadow-[0_0_16px_rgba(229,34,34,0.3)] hover:bg-[#122A1E] transition-all duration-300">
               <BainLogo className="h-5 w-auto max-w-[80px] shrink-0" />
               <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
                 Semifinalist @ <strong className="text-white font-semibold">Bain</strong> BrAINWARS ’26
@@ -167,14 +188,14 @@ export default function HeroSection() {
 
         {/* ── RIGHT COLUMN: 3D PORTRAIT & NAVIGATION BARS BELOW IT ── */}
         <div className="lg:col-span-5 flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-          {/* 3D PORTRAIT AVATAR (SEAMLESS INVISIBLE ROUNDED SQUARE WITH FOREST GLOW) */}
+          {/* 3D PORTRAIT AVATAR (WITH AUTHENTIC CRIMSON STUDIO RIM-LIGHT REFLECTION) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
             className="relative mb-5 sm:mb-6 flex items-center justify-center"
           >
-            <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] rounded-[32px] sm:rounded-[38px] overflow-hidden flex items-center justify-center bg-[#0C1E15]/60 ring-1 ring-[#1E4B34] shadow-[0_0_40px_rgba(22,91,51,0.28)] select-none">
+            <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] rounded-[32px] sm:rounded-[38px] overflow-hidden flex items-center justify-center bg-[#0C1E15]/80 ring-1 ring-[#1E4B34] border-r-2 border-b-2 border-[#E52222]/80 shadow-[0_0_35px_rgba(229,34,34,0.35),0_0_50px_rgba(22,91,51,0.25)] select-none">
               <img
                 src={avatarImg}
                 alt="Ritesh Ranjan Panda — AI/ML Engineer & Product-Minded Builder"
@@ -186,7 +207,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* NAVIGATION BARS BELOW PORTRAIT — CRIMSON HIGHLIGHT EFFECTS ON HOVER */}
+          {/* NAVIGATION BARS BELOW PORTRAIT — CRIMSON CTA HIGHLIGHTS */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -195,31 +216,34 @@ export default function HeroSection() {
           >
             <Link
               to="/about"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0E2418] text-[#F5F6F7] font-semibold text-[13.5px] sm:text-[14.5px] border border-[#22543D] hover:border-[#E03E38] hover:shadow-[0_0_20px_rgba(224,62,62,0.35)] transition-all duration-200 group cursor-pointer"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#111915] text-[#F5F6F7] font-semibold text-[13.5px] sm:text-[14.5px] border border-[#E52222]/70 shadow-[0_0_22px_rgba(229,34,34,0.3)] hover:border-[#E52222] hover:shadow-[0_0_32px_rgba(229,34,34,0.5)] transition-all duration-300 group cursor-pointer"
             >
-              <span>About</span>
-              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E03E38] font-bold">→</span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#E52222] animate-pulse" />
+                <span>About</span>
+              </span>
+              <span className="text-[#E52222] font-bold transition-transform duration-200 group-hover:translate-x-1">→</span>
             </Link>
             <Link
               to="/work"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#E03E38] hover:shadow-[0_0_18px_rgba(224,62,62,0.3)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#E52222] hover:shadow-[0_0_20px_rgba(229,34,34,0.35)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Selected Work</span>
-              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E03E38] font-bold">→</span>
+              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E52222] font-bold">→</span>
             </Link>
             <Link
               to="/achievements"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#E03E38] hover:shadow-[0_0_18px_rgba(224,62,62,0.3)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#E52222] hover:shadow-[0_0_20px_rgba(229,34,34,0.35)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Achievements</span>
-              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E03E38] font-bold">→</span>
+              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E52222] font-bold">→</span>
             </Link>
             <Link
               to="/research"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-secondary border border-[#1E4B34] hover:border-[#E03E38] hover:shadow-[0_0_18px_rgba(224,62,62,0.3)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-secondary border border-[#1E4B34] hover:border-[#E52222] hover:shadow-[0_0_20px_rgba(229,34,34,0.35)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Research</span>
-              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E03E38] font-bold">→</span>
+              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E52222] font-bold">→</span>
             </Link>
           </motion.div>
         </div>

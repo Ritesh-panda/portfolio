@@ -52,7 +52,7 @@ export default function CursorHighlight() {
         className="absolute w-[480px] h-[480px] rounded-full blur-[100px] will-change-transform"
         style={{
           transform: `translate3d(${pos.x - 240}px, ${pos.y - 240}px, 0)`,
-          background: 'radial-gradient(circle, rgba(224, 62, 62, 0.14) 0%, rgba(34, 197, 94, 0.08) 50%, transparent 75%)',
+          background: 'radial-gradient(circle, rgba(229, 34, 34, 0.22) 0%, rgba(22, 91, 51, 0.14) 45%, transparent 70%)',
         }}
       />
     </div>
