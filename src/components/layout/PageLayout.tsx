@@ -11,11 +11,11 @@ interface PageLayoutProps {
  */
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <main id="top" className="min-h-screen bg-[#0A0D0B] bg-gradient-to-br from-[#06120B] via-[#0B0F0D] to-[#111412] relative overflow-x-hidden text-fg-primary">
+    <main id="top" className="min-h-screen bg-[#111113] bg-gradient-to-b from-[#0E0E10] via-[#131316] to-[#0C0C0E] relative overflow-x-hidden text-fg-primary">
       {/* ── CINEMATIC STUDIO LIGHTING (FAITHFUL REPLICATION OF THE PHOTO) ── */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
-        {/* Left Side: Deep Forest Green Atmospheric Studio Glow */}
-        <div className="absolute top-[8%] -left-[12%] w-[650px] h-[650px] rounded-full bg-[#165B33]/25 blur-[120px]" />
+        {/* Subtle, Localized Forest Green Atmospheric Studio Sheen (Does not tint the black canvas) */}
+        <div className="absolute top-[15%] -left-[10%] w-[380px] h-[380px] rounded-full bg-[#165B33]/10 blur-[100px]" />
         
         {/* Center: Sharp Architectural Crimson Light Pillar (Exact from photo) */}
         <div className="absolute top-[-25%] left-[38%] md:left-[45%] w-[80px] sm:w-[110px] md:w-[135px] h-[160%] -rotate-[14deg] bg-gradient-to-b from-[#FF2626] via-[#D31F1F] to-[#7F0E0E]/15 opacity-80 shadow-[0_0_80px_rgba(229,34,34,0.6)]" />

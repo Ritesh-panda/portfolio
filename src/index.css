@@ -7,60 +7,60 @@
      LIGHT MODE — Apple HIG-Inspired Semantic Roles
   ───────────────────────────────────────────────*/
   :root {
-    /* Backgrounds — Charcoal Black (#171717) & Forest Green (#08110C) */
-    --bg-primary:     #121614;
-    --bg-secondary:   #17201B;
-    --bg-tertiary:    #1D2A23;
+    /* Backgrounds — Pure Matte Charcoal Black (#121214) */
+    --bg-primary:     #121214;
+    --bg-secondary:   #18181B;
+    --bg-tertiary:    #222226;
 
     /* Foreground / Text */
     --fg-primary:     #F5F6F7;
-    --fg-secondary:   #9FAAA3;
-    --fg-tertiary:    #6E7972;
-    --fg-quaternary:  #46514A;
-    --fg-placeholder: #58645C;
+    --fg-secondary:   #A1A1AA;
+    --fg-tertiary:    #71717A;
+    --fg-quaternary:  #52525B;
+    --fg-placeholder: #52525B;
 
-    /* Separators — Subtle Forest-Charcoal Borders */
-    --sep-subtle:     #1C2720;
-    --sep-standard:   #26362D;
-    --sep-opaque:     #34483C;
+    /* Separators — Charcoal Borders */
+    --sep-subtle:     #202024;
+    --sep-standard:   #27272A;
+    --sep-opaque:     #3F3F46;
 
-    /* Brand — Crimson Red (#A31C18) */
-    --brand:          #A31C18;
-    --brand-hover:    #C92621;
-    --brand-subtle:   rgba(163, 28, 24, 0.16);
+    /* Brand — Crimson Red (#E52222) */
+    --brand:          #E52222;
+    --brand-hover:    #FF2E2E;
+    --brand-subtle:   rgba(229, 34, 34, 0.16);
 
     /* Gradients */
-    --grad-brand:     linear-gradient(135deg, #A31C18 0%, #163B26 100%);
-    --grad-ai:        linear-gradient(135deg, #A31C18 0%, #20593B 100%);
-    --grad-ambient:   radial-gradient(circle at 50% 0%, rgba(163, 28, 24, 0.14) 0%, rgba(8, 17, 12, 0.6) 50%, transparent 80%);
+    --grad-brand:     linear-gradient(135deg, #E52222 0%, #165B33 100%);
+    --grad-ai:        linear-gradient(135deg, #E52222 0%, #165B33 100%);
+    --grad-ambient:   radial-gradient(circle at 50% 0%, rgba(229, 34, 34, 0.14) 0%, rgba(18, 18, 20, 0.8) 50%, transparent 80%);
 
     /* Semantic / Status */
-    --success:        #2EB85C;
+    --success:        #22C55E;
     --warning:        #E5A118;
-    --error:          #A31C18;
+    --error:          #E52222;
     --info:           #388BFD;
   }
 
   /* ─────────────────────────────────────────────
-     DARK MODE — Harmonized Charcoal Forest & Crimson
+     DARK MODE — Charcoal Black, Forest Green & Crimson
   ───────────────────────────────────────────────*/
   .dark {
     /* Backgrounds */
-    --bg-primary:     #0D120F;
-    --bg-secondary:   #141C17;
-    --bg-tertiary:    #1B2620;
+    --bg-primary:     #0F0F12;
+    --bg-secondary:   #161619;
+    --bg-tertiary:    #1E1E23;
 
     /* Foreground / Text */
     --fg-primary:     #F5F6F7;
-    --fg-secondary:   #9FAAA3;
-    --fg-tertiary:    #6E7972;
-    --fg-quaternary:  #46514A;
-    --fg-placeholder: #58645C;
+    --fg-secondary:   #A1A1AA;
+    --fg-tertiary:    #71717A;
+    --fg-quaternary:  #52525B;
+    --fg-placeholder: #52525B;
 
     /* Separators */
-    --sep-subtle:     #1C2720;
-    --sep-standard:   #26362D;
-    --sep-opaque:     #34483C;
+    --sep-subtle:     #202024;
+    --sep-standard:   #27272A;
+    --sep-opaque:     #3F3F46;
 
     /* Brand — Crimson Red */
     --brand:          #C92621;
