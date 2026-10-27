@@ -25,16 +25,16 @@ export default function HeroSection() {
           title="Ritesh Panda — Home"
           aria-label="Ritesh Panda Home"
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-fg-primary text-bg-primary font-bold flex items-center justify-center text-[18px] sm:text-[20px] tracking-tight shadow-md border border-sep-standard/30 group-hover:scale-105 group-hover:shadow-lg transition-all duration-300">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#0C2216] text-[#4ADE80] font-bold flex items-center justify-center text-[18px] sm:text-[20px] tracking-tight shadow-md border border-[#1E4B34] group-hover:border-[#22C55E] group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] transition-all duration-300">
             R
           </div>
-          <span className="font-bold text-[15px] sm:text-[16px] text-fg-primary tracking-tight hidden sm:inline-block group-hover:text-brand transition-colors duration-200">
+          <span className="font-bold text-[15px] sm:text-[16px] text-fg-primary tracking-tight hidden sm:inline-block group-hover:text-[#4ADE80] transition-colors duration-200">
             Ritesh Panda
           </span>
         </Link>
 
         {/* Top Right: 3D Social Icons (GitHub, LinkedIn, Gmail) */}
-        <div className="flex items-center gap-3.5 sm:gap-4.5 bg-bg-secondary/70 backdrop-blur-md px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full border border-sep-standard shadow-2xs">
+        <div className="flex items-center gap-3.5 sm:gap-4.5 bg-[#0C1E15]/80 backdrop-blur-md px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full border border-[#1E4B34] shadow-2xs">
           <a
             href="https://github.com/Ritesh-panda"
             target="_blank"
@@ -81,12 +81,12 @@ export default function HeroSection() {
             Ritesh Ranjan Panda
           </motion.h1>
 
-          {/* PRIMARY IDENTITY */}
+          {/* PRIMARY IDENTITY — VISIBLE FOREST GREEN */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(1.2rem,2.8vw,1.75rem)] font-semibold text-brand tracking-[-0.02em] mb-2 sm:mb-3"
+            className="text-[clamp(1.2rem,2.8vw,1.75rem)] font-semibold text-[#38D37E] tracking-[-0.02em] mb-2 sm:mb-3"
           >
             AI/ML Engineer & Product-Minded Builder
           </motion.div>
@@ -96,9 +96,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.26, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[13px] sm:text-[15.5px] text-fg-secondary font-medium tracking-[-0.01em] mb-3 sm:mb-4"
+            className="text-[13px] sm:text-[15.5px] text-[#A7F3D0]/80 font-medium tracking-[-0.01em] mb-3 sm:mb-4"
           >
-            AI Systems <span className="text-sep-standard mx-1.5">·</span> Research <span className="text-sep-standard mx-1.5">·</span> Product Thinking
+            AI Systems <span className="text-[#1E4B34] mx-1.5">·</span> Research <span className="text-[#1E4B34] mx-1.5">·</span> Product Thinking
           </motion.p>
 
           {/* CONTEXT & PHILOSOPHY */}
@@ -111,12 +111,12 @@ export default function HeroSection() {
             <p className="text-[13.5px] sm:text-[15.5px] text-fg-secondary leading-relaxed font-normal">
               Computer Science & Business Systems at VIT. Turning ambiguous problems into reliable, high-performance technology.
             </p>
-            <p className="text-[13px] sm:text-[14.5px] text-fg-tertiary italic font-normal">
+            <p className="text-[13px] sm:text-[14.5px] text-[#85948C] italic font-normal">
               "Research when the answer isn't known. Engineer when it is. Build when it matters."
             </p>
           </motion.div>
 
-          {/* ACHIEVEMENT BADGES */}
+          {/* ACHIEVEMENT BADGES — FOREST GREEN SHEEN */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -124,26 +124,26 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row flex-wrap items-center lg:items-start justify-center lg:justify-start gap-2.5 sm:gap-3 w-full"
           >
             {/* Amazon ML Summer School */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-bg-secondary/95 border border-sep-standard shadow-2xs hover:border-brand/40 hover:bg-bg-secondary transition-all">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#38D37E]/60 hover:bg-[#122A1E] transition-all">
               <AmazonLogo className="w-5 h-5 shrink-0 rounded-[4px]" />
-              <span className="text-[12px] sm:text-[13px] font-medium text-fg-secondary whitespace-nowrap">
-                Selected @ <strong className="text-fg-primary font-semibold">Amazon</strong> ML Summer School ’26
+              <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
+                Selected @ <strong className="text-white font-semibold">Amazon</strong> ML Summer School ’26
               </span>
             </div>
 
             {/* Cisco Forecast League */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-bg-secondary/95 border border-sep-standard shadow-2xs hover:border-brand/40 hover:bg-bg-secondary transition-all">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#38D37E]/60 hover:bg-[#122A1E] transition-all">
               <CiscoLogo className="w-5 h-5 shrink-0 rounded-[4px]" />
-              <span className="text-[12px] sm:text-[13px] font-medium text-fg-secondary whitespace-nowrap">
-                Rank 8 Finalist @ <strong className="text-fg-primary font-semibold">Cisco</strong> Forecast League ’26
+              <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
+                Rank 8 Finalist @ <strong className="text-white font-semibold">Cisco</strong> Forecast League ’26
               </span>
             </div>
 
             {/* Bain BrAINWARS */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-bg-secondary/95 border border-sep-standard shadow-2xs hover:border-brand/40 hover:bg-bg-secondary transition-all">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#38D37E]/60 hover:bg-[#122A1E] transition-all">
               <BainLogo className="h-5 w-auto max-w-[80px] shrink-0" />
-              <span className="text-[12px] sm:text-[13px] font-medium text-fg-secondary whitespace-nowrap">
-                Semifinalist @ <strong className="text-fg-primary font-semibold">Bain</strong> BrAINWARS ’26
+              <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
+                Semifinalist @ <strong className="text-white font-semibold">Bain</strong> BrAINWARS ’26
               </span>
             </div>
           </motion.div>
@@ -151,14 +151,14 @@ export default function HeroSection() {
 
         {/* ── RIGHT COLUMN: 3D PORTRAIT & NAVIGATION BARS BELOW IT ── */}
         <div className="lg:col-span-5 flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-          {/* 3D PORTRAIT AVATAR (SEAMLESS INVISIBLE ROUNDED SQUARE) */}
+          {/* 3D PORTRAIT AVATAR (SEAMLESS INVISIBLE ROUNDED SQUARE WITH FOREST GLOW) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
             className="relative mb-5 sm:mb-6 flex items-center justify-center"
           >
-            <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] rounded-[32px] sm:rounded-[38px] overflow-hidden flex items-center justify-center bg-transparent select-none">
+            <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] rounded-[32px] sm:rounded-[38px] overflow-hidden flex items-center justify-center bg-[#0C1E15]/60 ring-1 ring-[#1E4B34] shadow-[0_0_40px_rgba(22,91,51,0.28)] select-none">
               <img
                 src={avatarImg}
                 alt="Ritesh Ranjan Panda — AI/ML Engineer & Product-Minded Builder"
@@ -179,28 +179,28 @@ export default function HeroSection() {
           >
             <Link
               to="/about"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-brand text-white font-semibold text-[13.5px] sm:text-[14.5px] hover:bg-brand-hover transition-all duration-200 shadow-sm border border-brand/40 group cursor-pointer"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#A31C18] text-white font-semibold text-[13.5px] sm:text-[14.5px] hover:bg-[#C92621] transition-all duration-200 shadow-md border border-[#E03E38]/40 group cursor-pointer"
             >
               <span>About</span>
               <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>
             </Link>
             <Link
               to="/work"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-bg-secondary text-fg-primary border border-sep-standard hover:border-brand hover:text-brand transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#38D37E] hover:text-[#4ADE80] transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Selected Work</span>
               <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>
             </Link>
             <Link
               to="/achievements"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-bg-secondary text-fg-primary border border-sep-standard hover:border-brand hover:text-brand transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#38D37E] hover:text-[#4ADE80] transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Achievements</span>
               <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>
             </Link>
             <Link
               to="/research"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-bg-secondary text-fg-secondary border border-sep-standard hover:border-brand hover:text-brand transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-secondary border border-[#1E4B34] hover:border-[#38D37E] hover:text-[#4ADE80] transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Research</span>
               <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>

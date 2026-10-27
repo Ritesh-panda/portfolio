@@ -16,14 +16,14 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Curated Crimson Red (#A31C18) & Forest Green (#08110C) liquid palette
+    // Curated Crimson Red (#A31C18) & Visibly Rich Forest Green (#165B33 / #22C55E) liquid palette
     const THEME_PALETTE = [
-      { r: 0.64, g: 0.11, b: 0.09 }, // Crimson Red (#A31C18)
-      { r: 0.08, g: 0.30, b: 0.16 }, // Forest Green (#144D29)
-      { r: 0.78, g: 0.16, b: 0.14 }, // Vivid Crimson
-      { r: 0.05, g: 0.22, b: 0.12 }, // Deep Forest
+      { r: 0.06, g: 0.62, b: 0.30 }, // Lush Forest Green (vividly visible)
+      { r: 0.74, g: 0.14, b: 0.12 }, // Crimson Red (#A31C18)
+      { r: 0.08, g: 0.78, b: 0.38 }, // Vivid Emerald Forest
+      { r: 0.86, g: 0.18, b: 0.15 }, // Vivid Crimson
+      { r: 0.04, g: 0.48, b: 0.22 }, // Deep British Racing Forest Green
       { r: 0.68, g: 0.12, b: 0.10 }, // Ruby Crimson
-      { r: 0.10, g: 0.36, b: 0.20 }, // Emerald Forest
     ]
 
     let paletteIndex = 0
