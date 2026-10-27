@@ -33,7 +33,7 @@ export default function NavHeader() {
           fixed top-0 left-0 right-0 z-50
           transition-all duration-300 ease-apple
           ${scrolled
-            ? 'bg-[#121614]/85 backdrop-blur-xl border-b border-sep-standard/60 shadow-xs'
+            ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-sep-standard/60 shadow-xs'
             : 'bg-bg-primary/60 backdrop-blur-md'
           }
         `}

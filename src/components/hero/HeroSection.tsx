@@ -5,7 +5,7 @@ import { GitHub3DIcon, LinkedIn3DIcon, Gmail3DIcon } from '../common/Social3DIco
 import { AmazonLogo, CiscoLogo, BainLogo } from '../common/CompanyLogos'
 
 /**
- * HeroSection — Split Editorial Layout with Apple HIG Design Language
+ * HeroSection — Split Editorial Layout with R-Symbol Header, Left-Aligned Bio & Right Portrait Navigation Stack
  */
 export default function HeroSection() {
   return (
@@ -25,7 +25,7 @@ export default function HeroSection() {
           title="Ritesh Panda — Home"
           aria-label="Ritesh Panda Home"
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-bg-secondary text-fg-primary font-bold flex items-center justify-center text-[18px] sm:text-[20px] tracking-tight shadow-md border border-sep-standard group-hover:border-brand group-hover:scale-105 group-hover:text-brand transition-all duration-300">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-fg-primary text-bg-primary font-bold flex items-center justify-center text-[18px] sm:text-[20px] tracking-tight shadow-md border border-sep-standard/30 group-hover:scale-105 group-hover:shadow-lg transition-all duration-300">
             R
           </div>
           <span className="font-bold text-[15px] sm:text-[16px] text-fg-primary tracking-tight hidden sm:inline-block group-hover:text-brand transition-colors duration-200">
@@ -34,7 +34,7 @@ export default function HeroSection() {
         </Link>
 
         {/* Top Right: 3D Social Icons (GitHub, LinkedIn, Gmail) */}
-        <div className="flex items-center gap-3.5 sm:gap-4.5 bg-bg-secondary/80 backdrop-blur-md px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full border border-sep-standard hover:border-brand/40 transition-colors duration-300 shadow-2xs">
+        <div className="flex items-center gap-3.5 sm:gap-4.5 bg-bg-secondary/70 backdrop-blur-md px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full border border-sep-standard shadow-2xs">
           <a
             href="https://github.com/Ritesh-panda"
             target="_blank"
@@ -71,22 +71,6 @@ export default function HeroSection() {
         
         {/* ── LEFT COLUMN: NAME, TEXT & ACHIEVEMENTS ── */}
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-          {/* LIVE STATUS PILL */}
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05, duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bg-secondary/90 border border-sep-standard hover:border-brand/40 transition-colors duration-300 mb-3 backdrop-blur-md shadow-2xs"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="text-[12px] font-medium text-fg-secondary tracking-wide">
-              Engineering AI Systems & Products
-            </span>
-          </motion.div>
-
           {/* NAME (H1 CANONICAL IDENTIFIER) */}
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
@@ -97,7 +81,7 @@ export default function HeroSection() {
             Ritesh Ranjan Panda
           </motion.h1>
 
-          {/* PRIMARY IDENTITY — APPLE BLUE */}
+          {/* PRIMARY IDENTITY */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -167,14 +151,14 @@ export default function HeroSection() {
 
         {/* ── RIGHT COLUMN: 3D PORTRAIT & NAVIGATION BARS BELOW IT ── */}
         <div className="lg:col-span-5 flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-          {/* 3D PORTRAIT AVATAR (SEAMLESS INVISIBLE ROUNDED SQUARE / SQUIRCLE) */}
+          {/* 3D PORTRAIT AVATAR (SEAMLESS INVISIBLE ROUNDED SQUARE) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
             className="relative mb-5 sm:mb-6 flex items-center justify-center"
           >
-            <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] rounded-[32px] sm:rounded-[38px] overflow-hidden flex items-center justify-center bg-bg-secondary ring-1 ring-sep-subtle shadow-elev-2 select-none">
+            <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] rounded-[32px] sm:rounded-[38px] overflow-hidden flex items-center justify-center bg-transparent select-none">
               <img
                 src={avatarImg}
                 alt="Ritesh Ranjan Panda — AI/ML Engineer & Product-Minded Builder"
@@ -229,3 +213,5 @@ export default function HeroSection() {
     </div>
   )
 }
+
+

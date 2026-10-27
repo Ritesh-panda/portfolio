@@ -7,9 +7,9 @@
      LIGHT MODE — Apple HIG-Inspired Semantic Roles
   ───────────────────────────────────────────────*/
   :root {
-    /* Backgrounds */
-    --bg-primary:     #FFFFFF;
-    --bg-secondary:   #F5F5F7;
+    /* Backgrounds — Soft Rose Pink / BTS Pastel Violet Tint */
+    --bg-primary:     #FDF0F5;
+    --bg-secondary:   #F6E6F2;
     --bg-tertiary:    #FFFFFF;
 
     /* Foreground / Text */
@@ -42,7 +42,7 @@
   }
 
   /* ─────────────────────────────────────────────
-     DARK MODE — Proper Apple HIG Dark Palette
+     DARK MODE — Proper separate palette
   ───────────────────────────────────────────────*/
   .dark {
     /* Backgrounds */
