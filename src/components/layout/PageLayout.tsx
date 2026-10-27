@@ -11,7 +11,7 @@ interface PageLayoutProps {
  */
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <main id="top" className="min-h-screen bg-gradient-to-br from-[#FDF0F5] via-[#F9EBF6] to-[#F5EBF9] relative overflow-x-hidden text-fg-primary">
+    <main id="top" className="min-h-screen bg-gradient-to-br from-[#08110C] via-[#111713] to-[#171717] relative overflow-x-hidden text-fg-primary">
       {/* Interactive WebGL Water Fluid Canvas */}
       <FluidCursorBackground />
 

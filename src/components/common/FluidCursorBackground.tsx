@@ -16,6 +16,18 @@ export default function FluidCursorBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
+    // Curated Crimson Red (#A31C18) & Forest Green (#08110C) liquid palette
+    const THEME_PALETTE = [
+      { r: 0.64, g: 0.11, b: 0.09 }, // Crimson Red (#A31C18)
+      { r: 0.08, g: 0.30, b: 0.16 }, // Forest Green (#144D29)
+      { r: 0.78, g: 0.16, b: 0.14 }, // Vivid Crimson
+      { r: 0.05, g: 0.22, b: 0.12 }, // Deep Forest
+      { r: 0.68, g: 0.12, b: 0.10 }, // Ruby Crimson
+      { r: 0.10, g: 0.36, b: 0.20 }, // Emerald Forest
+    ]
+
+    let paletteIndex = 0
+
     const fluidOptions: any = {
       IMMEDIATE: false, // Prevents sudden auto-blasts on mount
       TRIGGER: 'hover',
@@ -31,8 +43,8 @@ export default function FluidCursorBackground() {
       SPLAT_RADIUS: 0.22, // Refined silky ribbons
       SPLAT_FORCE: 3500, // Natural responsive fluid wave momentum
       SHADING: false, // Disables specular highlight reflections that cause white core burnout
-      COLORFUL: true, // Full rich rainbow spectrum (violet, cyan, emerald, sky blue, rose, coral, amber)
-      COLOR_UPDATE_SPEED: 10, // Smooth continuous rainbow color transitions
+      COLORFUL: false, // Focus on Crimson Red & Forest Green theme
+      SPLAT_COLOR: THEME_PALETTE[0],
       PAUSED: false,
       BACK_COLOR: { r: 0, g: 0, b: 0 },
       TRANSPARENT: true,
@@ -40,19 +52,27 @@ export default function FluidCursorBackground() {
       SUNRAYS: false,
     }
 
-    // Initialize WebGL Navier-Stokes Rainbow Liquid Simulation
+    // Initialize WebGL Navier-Stokes Crimson & Forest Liquid Simulation
     try {
       WebGLFluid(canvas, fluidOptions)
     } catch (err) {
       console.warn('WebGL Fluid initialization fallback:', err)
     }
 
-    // Safely forward global window mouse events into WebGL canvas with smooth gliding
+    let moveCounter = 0
+
+    // Safely forward global window mouse events into WebGL canvas with smooth gliding and color cycling
     const handleGlobalMouseMove = (e: MouseEvent) => {
       if (!e.isTrusted || !canvas) return
       const rect = canvas.getBoundingClientRect()
       const offsetX = e.clientX - rect.left
       const offsetY = e.clientY - rect.top
+
+      moveCounter++
+      if (moveCounter % 30 === 0) {
+        paletteIndex = (paletteIndex + 1) % THEME_PALETTE.length
+        fluidOptions.SPLAT_COLOR = THEME_PALETTE[paletteIndex]
+      }
 
       const moveEvent = new MouseEvent('mousemove', {
         clientX: e.clientX,
@@ -71,6 +91,12 @@ export default function FluidCursorBackground() {
       const rect = canvas.getBoundingClientRect()
       const offsetX = touch.clientX - rect.left
       const offsetY = touch.clientY - rect.top
+
+      moveCounter++
+      if (moveCounter % 30 === 0) {
+        paletteIndex = (paletteIndex + 1) % THEME_PALETTE.length
+        fluidOptions.SPLAT_COLOR = THEME_PALETTE[paletteIndex]
+      }
 
       const moveEvent = new MouseEvent('mousemove', {
         clientX: touch.clientX,

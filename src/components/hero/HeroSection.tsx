@@ -179,7 +179,7 @@ export default function HeroSection() {
           >
             <Link
               to="/about"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-fg-primary text-bg-primary font-semibold text-[13.5px] sm:text-[14.5px] hover:opacity-90 transition-all duration-200 shadow-sm group cursor-pointer"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-brand text-white font-semibold text-[13.5px] sm:text-[14.5px] hover:bg-brand-hover transition-all duration-200 shadow-sm border border-brand/40 group cursor-pointer"
             >
               <span>About</span>
               <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>
