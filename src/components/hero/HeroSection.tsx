@@ -25,7 +25,7 @@ export default function HeroSection() {
           title="Ritesh Panda — Home"
           aria-label="Ritesh Panda Home"
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#0C2216] text-[#4ADE80] font-bold flex items-center justify-center text-[18px] sm:text-[20px] tracking-tight shadow-md border border-[#1E4B34] group-hover:border-[#22C55E] group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] transition-all duration-300">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#0C2216] text-[#4ADE80] font-bold flex items-center justify-center text-[18px] sm:text-[20px] tracking-tight shadow-md border border-[#1E4B34] group-hover:border-[#E03E38] group-hover:scale-105 group-hover:shadow-[0_0_16px_rgba(224,62,62,0.35)] transition-all duration-300">
             R
           </div>
           <span className="font-bold text-[15px] sm:text-[16px] text-fg-primary tracking-tight hidden sm:inline-block group-hover:text-[#4ADE80] transition-colors duration-200">
@@ -34,7 +34,7 @@ export default function HeroSection() {
         </Link>
 
         {/* Top Right: 3D Social Icons (GitHub, LinkedIn, Gmail) */}
-        <div className="flex items-center gap-3.5 sm:gap-4.5 bg-[#0C1E15]/80 backdrop-blur-md px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full border border-[#1E4B34] shadow-2xs">
+        <div className="flex items-center gap-3.5 sm:gap-4.5 bg-[#0C1E15]/80 backdrop-blur-md px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full border border-[#1E4B34] hover:border-[#E03E38]/50 transition-colors duration-300 shadow-2xs">
           <a
             href="https://github.com/Ritesh-panda"
             target="_blank"
@@ -71,6 +71,22 @@ export default function HeroSection() {
         
         {/* ── LEFT COLUMN: NAME, TEXT & ACHIEVEMENTS ── */}
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          {/* LIVE STATUS PILL — CRIMSON HIGHLIGHT BEACON */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05, duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0C1E15]/90 border border-[#1E4B34] hover:border-[#E03E38]/60 transition-colors duration-300 mb-3 backdrop-blur-md shadow-2xs"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E03E38] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E03E38]" />
+            </span>
+            <span className="text-[12px] font-medium text-[#A7F3D0]/90 tracking-wide">
+              Engineering AI Systems & Products
+            </span>
+          </motion.div>
+
           {/* NAME (H1 CANONICAL IDENTIFIER) */}
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
@@ -116,7 +132,7 @@ export default function HeroSection() {
             </p>
           </motion.div>
 
-          {/* ACHIEVEMENT BADGES — FOREST GREEN SHEEN */}
+          {/* ACHIEVEMENT BADGES — FOREST GREEN SHEEN WITH CRIMSON HIGHLIGHT ON HOVER */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -124,7 +140,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row flex-wrap items-center lg:items-start justify-center lg:justify-start gap-2.5 sm:gap-3 w-full"
           >
             {/* Amazon ML Summer School */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#38D37E]/60 hover:bg-[#122A1E] transition-all">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E03E38]/60 hover:shadow-[0_0_14px_rgba(224,62,62,0.22)] hover:bg-[#122A1E] transition-all duration-300">
               <AmazonLogo className="w-5 h-5 shrink-0 rounded-[4px]" />
               <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
                 Selected @ <strong className="text-white font-semibold">Amazon</strong> ML Summer School ’26
@@ -132,7 +148,7 @@ export default function HeroSection() {
             </div>
 
             {/* Cisco Forecast League */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#38D37E]/60 hover:bg-[#122A1E] transition-all">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E03E38]/60 hover:shadow-[0_0_14px_rgba(224,62,62,0.22)] hover:bg-[#122A1E] transition-all duration-300">
               <CiscoLogo className="w-5 h-5 shrink-0 rounded-[4px]" />
               <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
                 Rank 8 Finalist @ <strong className="text-white font-semibold">Cisco</strong> Forecast League ’26
@@ -140,7 +156,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bain BrAINWARS */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#38D37E]/60 hover:bg-[#122A1E] transition-all">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0D2016]/90 border border-[#1E4B34] shadow-2xs hover:border-[#E03E38]/60 hover:shadow-[0_0_14px_rgba(224,62,62,0.22)] hover:bg-[#122A1E] transition-all duration-300">
               <BainLogo className="h-5 w-auto max-w-[80px] shrink-0" />
               <span className="text-[12px] sm:text-[13px] font-medium text-[#D1FAE5] whitespace-nowrap">
                 Semifinalist @ <strong className="text-white font-semibold">Bain</strong> BrAINWARS ’26
@@ -170,7 +186,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* NAVIGATION BARS BELOW PORTRAIT */}
+          {/* NAVIGATION BARS BELOW PORTRAIT — CRIMSON HIGHLIGHT EFFECTS ON HOVER */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -179,31 +195,31 @@ export default function HeroSection() {
           >
             <Link
               to="/about"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#A31C18] text-white font-semibold text-[13.5px] sm:text-[14.5px] hover:bg-[#C92621] transition-all duration-200 shadow-md border border-[#E03E38]/40 group cursor-pointer"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0E2418] text-[#F5F6F7] font-semibold text-[13.5px] sm:text-[14.5px] border border-[#22543D] hover:border-[#E03E38] hover:shadow-[0_0_20px_rgba(224,62,62,0.35)] transition-all duration-200 group cursor-pointer"
             >
               <span>About</span>
-              <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>
+              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E03E38] font-bold">→</span>
             </Link>
             <Link
               to="/work"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#38D37E] hover:text-[#4ADE80] transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#E03E38] hover:shadow-[0_0_18px_rgba(224,62,62,0.3)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Selected Work</span>
-              <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>
+              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E03E38] font-bold">→</span>
             </Link>
             <Link
               to="/achievements"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#38D37E] hover:text-[#4ADE80] transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-primary border border-[#1E4B34] hover:border-[#E03E38] hover:shadow-[0_0_18px_rgba(224,62,62,0.3)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Achievements</span>
-              <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>
+              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E03E38] font-bold">→</span>
             </Link>
             <Link
               to="/research"
-              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-secondary border border-[#1E4B34] hover:border-[#38D37E] hover:text-[#4ADE80] transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
+              className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0C1E15]/85 text-fg-secondary border border-[#1E4B34] hover:border-[#E03E38] hover:shadow-[0_0_18px_rgba(224,62,62,0.3)] hover:text-white transition-all duration-200 shadow-xs group cursor-pointer text-[13.5px] sm:text-[14.5px] font-semibold"
             >
               <span>Research</span>
-              <span className="transition-transform duration-200 group-hover:translate-x-1 font-bold">→</span>
+              <span className="transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#E03E38] font-bold">→</span>
             </Link>
           </motion.div>
         </div>
